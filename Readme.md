@@ -39,6 +39,4 @@ This website itself, created with **HTML + CSS** and hosted on **GitHub Pages**.
 
 ---
 
-## 📌 How to Use This Repo
-- `index.html` → Main portfolio website file.  
-- Deploys automatically with **GitHub Pages**.  
+
