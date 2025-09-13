@@ -96,6 +96,14 @@
       border-radius: 5px;
     }
 
+    /* ===== Navbar Responsive for Mobile ===== */
+    @media (max-width: 600px) {
+      nav a {
+        padding: 4px 8px;      /* slightly narrower */
+        font-size: 0.9em;      /* slightly smaller font */
+      }
+    }
+
     /* ===== Sections ===== */
     section {
       padding: 40px 15px;
@@ -319,13 +327,4 @@
         if(scrollY >= sectionTop) current = section.getAttribute('id');
       });
       navLinks.forEach(link => {
-        link.classList.remove('active');
-        if(link.getAttribute('href') === '#' + current){
-          link.classList.add('active');
-        }
-      });
-    });
-  </script>
-
-</body>
-</html>
+       
