@@ -1,140 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Md Shamsh Nawed - Portfolio</title>
-    <style>
-        /* Background gradient using #8ce8f1 and #cb70c4 */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #8ce8f1, #cb70c4);
-            color: #f0f0f0;
-            line-height: 1.6;
-            padding: 20px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MD SHAMSH NAWED | Portfolio</title>
+  <style>
+    /* ===== Global Styles ===== */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+      background: linear-gradient(135deg, #8ce8f1, #cb70c4);
+      background-attachment: fixed;
+      background-size: cover;
+    }
 
-        /* Container for content */
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: rgba(20, 30, 40, 0.7);
-            padding: 25px 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.3);
-        }
+    a { text-decoration: none; }
 
-        h1, h2, h3 {
-            color: #ffe6ff;
-            text-align: center;
-        }
+    /* ===== Header ===== */
+    header {
+      background: rgba(44, 62, 80, 0.85);
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      border-bottom: 4px solid #fff;
+    }
+    header h1 { margin: 0; font-size: 2.5em; }
+    header p { margin-top: 10px; font-size: 1.2em; }
 
-        a {
-            color: #ffd1f7;
-            text-decoration: none;
-        }
+    /* ===== Navbar ===== */
+    nav {
+      background: rgba(52, 73, 94, 0.9);
+      padding: 10px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover { text-decoration: underline; }
 
-        a:hover {
-            text-decoration: underline;
-        }
+    /* ===== Sections ===== */
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+    p { line-height: 1.6; text-align: center; }
 
-        /* Profile image styling */
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            object-fit: cover; /* crops nicely */
-            border-radius: 50%; /* makes it circular */
-            margin: 20px auto;
-            display: block;
-            border: 3px solid #fff; /* neat border */
-            box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
-        }
+    /* ===== Skills ===== */
+    .skills {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .skill {
+      background: #fff;
+      padding: 15px 25px;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .skill:hover { background: #f0f0f0; }
 
-        hr {
-            border: 1px solid #ffd1f7;
-            margin: 30px 0;
-        }
+    /* ===== Projects ===== */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .project {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+    .project:hover { transform: translateY(-5px); }
 
-        ul {
-            padding-left: 20px;
-        }
+    /* ===== Contact ===== */
+    .contact p { font-size: 1.1em; margin: 10px 0; }
+    .contact a { color: #2980b9; }
+    .contact a:hover { text-decoration: underline; }
 
-        li {
-            margin-bottom: 10px;
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-            .container {
-                padding: 15px 20px;
-            }
-            .profile-pic {
-                width: 120px;
-                height: 120px;
-            }
-        }
-    </style>
+    /* ===== Footer ===== */
+    footer {
+      background: rgba(44, 62, 80, 0.9);
+      color: #fff;
+      text-align: center;
+      padding: 15px 10px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>#PORTFOLIO</h1>
 
-        <section id="personal-info">
-            <h2>👤 Personal Information</h2>
-            <img src="004.jpg" alt="Md Shamsh Nawed" class="profile-pic" />
-            <ul>
-                <li><strong>Name:</strong> Md Shamsh Nawed</li>
-                <li><strong>Email:</strong> <a href="mailto:shamshnawed781@gmail.com">shamshnawed781@gmail.com</a></li>
-                <li><strong>Phone:</strong> +91 8235133843</li>
-                <li><strong>Location:</strong> Biharsharif , Bihar</li>
-            </ul>
-            <hr />
-        </section>
+  <!-- Header -->
+  <header>
+    <h1>MD SHAMSH NAWED</h1>
+    <p>2nd Year B.Tech CSE Student | Aspiring Software Engineer</p>
+  </header>
 
-        <section id="education">
-            <h2>🎓 Education</h2>
-            <ul>
-                <li>Allama Iqbal college </li>
-                <li>Budge Budge Institute of Technology (BBIT), Kolkata</li>
-                <li>Graduation Year: <strong>2028</strong></li>
-            </ul>
-            <hr />
-        </section>
+  <!-- Navbar -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-        <section id="skills">
-            <h2>💡 Skills</h2>
-            <ul>
-                <li><strong>Programming Languages:</strong> Python, C, C++, Java</li>
-                <li><strong>Tools & Software:</strong> MS Office (Word, PowerPoint)</li>
-                <li><strong>Other Skills:</strong>
-                    <ul>
-                        <li>PPT Making & Presentation</li>
-                        <li>Strong problem-solving & analytical abilities</li>
-                    </ul>
-                </li>
-            </ul>
-            <hr />
-        </section>
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am currently a 2nd year B.Tech CSE student passionate about software development, problem-solving, 
+      and building projects. I enjoy learning new technologies and improving my coding skills to prepare 
+      for a career in software engineering.
+    </p>
+  </section>
 
-        <section id="experience">
-            <h2>📂 Relevant Experience</h2>
-            <p><strong>2025 (Ongoing) - Academic Projects / College Activities</strong></p>
-            <ul>
-                <li>Created academic presentations and technical reports using <strong>MS PowerPoint</strong> and <strong>Word</strong>.</li>
-                <li>Participated in coding practice and problem-solving activities in <strong>Python, C, and Java</strong>.</li>
-                <li>Assisted classmates in preparing structured reports and presentations.</li>
-            </ul>
-            <hr />
-        </section>
-
-        <section id="goals">
-            <h2>🚀 Career Goals</h2>
-            <p>To leverage my technical and problem-solving skills to grow as a software developer and contribute to innovative projects.</p>
-        </section>
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill">C</div>
+      <div class="skill">Python</div>
+      <div class="skill">Java</div>
     </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Digital Dice Roller</h3>
+        <p>A dice roller circuit using IC 555 & 4017 to generate random numbers 1–6, displayed on LEDs.</p>
+      </div>
+      <div class="project">
+        <h3>Portfolio Website</h3>
+        <p>This website itself is one of my projects, built with HTML & CSS to showcase my skills.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>📧 Email: <a href="mailto:Shamshnawed781@gmail.com">Shamshnawed781@gmail.com</a></p>
+    <p>💼 GitHub: <a href="https://github.com/SN1912" target="_blank">github.com/SN1912</a></p>
+    <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/shamshn/" target="_blank">linkedin.com/in/shamshn</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 MD SHAMSH NAWED | All Rights Reserved</p>
+  </footer>
+
 </body>
 </html>
