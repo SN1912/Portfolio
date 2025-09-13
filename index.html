@@ -58,14 +58,14 @@
       z-index: 1000;
       display: flex;
       justify-content: center;
-      gap: 20px;
-      padding: 12px 0;
+      gap: 15px;
+      padding: 10px 0;
       background: rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255,255,255,0.3);
-      transition: 0.3s;
-      flex-wrap: wrap;
+      overflow-x: auto;        /* horizontal scroll if needed */
+      white-space: nowrap;     /* keep links in one line */
     }
 
     nav a {
@@ -73,13 +73,28 @@
       font-weight: bold;
       padding: 5px 10px;
       border-radius: 5px;
+      flex-shrink: 0;          /* prevent shrinking */
       transition: 0.3s;
     }
+
     nav a.active {
       color: #ffd700;
       background: rgba(255,255,255,0.3);
     }
-    nav a:hover { text-decoration: underline; color: #ffd700; }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #ffd700;
+    }
+
+    /* Optional: scrollbar for navbar */
+    nav::-webkit-scrollbar {
+      height: 5px;
+    }
+    nav::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.3);
+      border-radius: 5px;
+    }
 
     /* ===== Sections ===== */
     section {
@@ -196,13 +211,6 @@
       margin-top: 40px;
     }
 
-    /* ===== Responsive ===== */
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        gap: 10px;
-      }
-    }
   </style>
 </head>
 <body>
