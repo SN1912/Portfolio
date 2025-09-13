@@ -20,7 +20,7 @@
       font-family: Arial, sans-serif;
       color: #333;
       background: linear-gradient(135deg, #7bd6e1, #c05cbf);
-      background-attachment: scroll; /* optimized for mobile */
+      background-attachment: scroll;
       background-size: cover;
     }
 
@@ -57,24 +57,26 @@
       top: 0;
       z-index: 1000;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 15px;
-      padding: 10px 0;
+      padding: 10px 20px;
       background: rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255,255,255,0.3);
-      overflow-x: auto;        /* horizontal scroll if needed */
-      white-space: nowrap;     /* keep links in one line */
+      overflow-x: auto;
+      white-space: nowrap;
+      scroll-behavior: smooth;
     }
 
     nav a {
       color: #fff;
       font-weight: bold;
-      padding: 5px 10px;
+      padding: 8px 15px;
       border-radius: 5px;
-      flex-shrink: 0;          /* prevent shrinking */
+      flex-shrink: 0;
       transition: 0.3s;
+      display: inline-block;
     }
 
     nav a.active {
@@ -87,7 +89,6 @@
       color: #ffd700;
     }
 
-    /* Optional: scrollbar for navbar */
     nav::-webkit-scrollbar {
       height: 5px;
     }
@@ -96,11 +97,13 @@
       border-radius: 5px;
     }
 
-    /* ===== Navbar Responsive for Mobile ===== */
     @media (max-width: 600px) {
+      nav {
+        padding: 10px;
+      }
       nav a {
-        padding: 4px 8px;      /* slightly narrower */
-        font-size: 0.9em;      /* slightly smaller font */
+        padding: 6px 10px;
+        font-size: 0.9em;
       }
     }
 
@@ -218,7 +221,6 @@
       padding: 15px 10px;
       margin-top: 40px;
     }
-
   </style>
 </head>
 <body>
@@ -307,6 +309,7 @@
   <script>
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav a');
+    const nav = document.querySelector('nav');
 
     // Fade-in animation
     const observer = new IntersectionObserver((entries) => {
@@ -319,12 +322,35 @@
 
     sections.forEach(section => observer.observe(section));
 
-    // Navbar highlight
+    // Navbar highlight on scroll
     window.addEventListener('scroll', () => {
       let current = '';
       sections.forEach(section => {
-        const sectionTop = section.offsetTop - 80;
-        if(scrollY >= sectionTop) current = section.getAttribute('id');
+        const sectionTop = section.offsetTop - 90;
+        const sectionHeight = section.offsetHeight;
+        if(scrollY >= sectionTop && scrollY < sectionTop + sectionHeight){
+          current = section.getAttribute('id');
+        }
       });
+
       navLinks.forEach(link => {
-       
+        link.classList.remove('active');
+        if(link.getAttribute('href') === `#${current}`){
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Optional: highlight on page load
+    window.dispatchEvent(new Event('scroll'));
+
+    // Smooth navbar scroll for mobile
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        link.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+      });
+    });
+  </script>
+
+</body>
+</html>
